@@ -4,6 +4,7 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+let clearBtn;
 
 if (window.location.pathname === '/notes') {
   noteForm = document.querySelector('.note-form');
@@ -192,3 +193,114 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
+
+
+
+// DOM Elements
+let notesLink;
+let notesPage;
+let notesList;
+let noteTitleInput;
+let noteTextInput;
+let saveNoteBtn;
+let clearFormBtn;
+let newNoteBtn;
+
+// Function to show an element
+const show = (elem) => {
+  elem.style.display = 'block';
+};
+
+// Function to hide an element
+const hide = (elem) => {
+  elem.style.display = 'none';
+};
+
+// Function to initialize the variables
+const initializeElements = () => {
+  notesLink = document.getElementById('notes-link');
+  notesPage = document.getElementById('notes-page');
+  notesList = document.getElementById('notes-list');
+  noteTitleInput = document.getElementById('note-title');
+  noteTextInput = document.getElementById('note-text');
+  saveNoteBtn = document.getElementById('save-note');
+  clearFormBtn = document.getElementById('clear-form');
+  newNoteBtn = document.getElementById('new-note');
+};
+
+// Function to show the notes page
+const showNotesPage = () => {
+  hide(document.getElementById('landing-page'));
+  show(notesPage);
+};
+
+// Function to handle the display of note elements
+const handleNoteElements = () => {
+  if (noteTitleInput.value.trim() !== '' || noteTextInput.value.trim() !== '') {
+    show(saveNoteBtn);
+    show(clearFormBtn);
+  } else {
+    hide(saveNoteBtn);
+    hide(clearFormBtn);
+  }
+};
+
+// Function to save the entered note
+const saveNote = () => {
+  const newNote = {
+    title: noteTitleInput.value.trim(),
+    text: noteTextInput.value.trim()
+  };
+
+  // Perform the necessary operations to save the note (e.g., API call, local storage, etc.)
+  // After saving the note, update the UI accordingly
+  const noteListItem = document.createElement('li');
+  noteListItem.textContent = newNote.title;
+  noteListItem.addEventListener('click', () => {
+    // Display the clicked note in the right-hand column
+    noteTitleInput.value = newNote.title;
+    noteTextInput.value = newNote.text;
+    hide(newNoteBtn);
+  });
+  notesList.appendChild(noteListItem);
+
+  // Clear the input fields and hide buttons after saving the note
+  noteTitleInput.value = '';
+  noteTextInput.value = '';
+  hide(saveNoteBtn);
+  hide(clearFormBtn);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initializeElements();
+
+  // Show Notes Page when clicking on the notes link
+  notesLink.addEventListener('click', () => {
+    showNotesPage();
+  });
+
+  // Handle input events for note elements
+  noteTitleInput.addEventListener('input', handleNoteElements);
+  noteTextInput.addEventListener('input', handleNoteElements);
+
+  // Save Note button functionality
+  saveNoteBtn.addEventListener('click', () => {
+    saveNote();
+  });
+
+  // Clear Form button functionality
+  clearFormBtn.addEventListener('click', () => {
+    noteTitleInput.value = '';
+    noteTextInput.value = '';
+    hide(saveNoteBtn);
+    hide(clearFormBtn);
+  });
+
+  // New Note button functionality
+  newNoteBtn.addEventListener('click', () => {
+    noteTitleInput.value = '';
+    noteTextInput.value = '';
+    hide(newNoteBtn);
+  });
+});

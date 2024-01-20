@@ -22,6 +22,15 @@ body {
   width: 100%;
   outline: none;
   border: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.note-form {
+display: flex;
+justify-content: center;
+display: flex;
+justify-content: space-evenly;
 }
 
 .note-textarea {
