@@ -12,12 +12,12 @@
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
   <body>
     <nav class="navbar bg-info">
-      <a class="navbar-brand text-light p-3" href="/">Note Taker </a>
+      <a id = "navbar_title" a class="navbar-brand text-light p-3" href="/">Note Taker </a>
       <div class="icons">
         <button type="button" class="save-note">
           <span class="fas fa-save"></span>
@@ -42,17 +42,21 @@
         </div>
         <div class="col-8">
           <form class="note-form">
+            <div>
             <input
             class="note-title"
             placeholder="Note Title"
             maxlength="28"
             type="text"
             />
+          </div>
+          <div>
             <textarea class="note-textarea" placeholder="Note Text"></textarea>
+          </div>
             </form>
         </div>
       </div>
     </div>
-    <script src="/assets/js/index.js"></script>
   </body>
+  <script src="assets/js/index.js"></script>
 </html>

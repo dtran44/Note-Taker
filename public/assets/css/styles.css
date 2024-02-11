@@ -28,8 +28,9 @@ body {
   cursor: pointer;
 }
 
-.note-textarea,
-.note-title {
+
+.note-title,
+.note-textarea {
   color: #000000;
   width: 100%;
   outline: none;
@@ -54,13 +55,20 @@ justify-content: space-evenly;
 .note-title {
   height: 50px;
   margin-top: 13px;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .note-title:read-only,
 .note-textarea:read-only {
   color: #757575;
 }
+
+#navbar_title {
+ font-size: 4rem;
+  font-weight: bold;
+}
+
 
 .list-container .card {
   height: calc(100vh - 70px);
