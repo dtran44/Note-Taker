@@ -5,7 +5,7 @@ const express = require('express');
 const path = require('path');
 
 // Import notes.js from routes folder
-const api = require('./routes');
+const api = require('./routes/index.js');
 
 // Initialize an instance of Express.js
 const app = express();
@@ -13,13 +13,10 @@ const app = express();
 // Specify on which port the Express.js server will run
 const PORT = 3001;
 
-// Import utils from helpers folder
-// const helpers = require('./utils/helpers');
-
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api/notes', api);
+app.use('/api', api);
 
 app.use(express.static('public'));
 
@@ -29,7 +26,7 @@ app.get('/', (req, res) =>
 );
 
 // GET Route for notes page
-app.get('/feedback', (req, res) =>
+app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, './public/notes.html'))
 );
 
