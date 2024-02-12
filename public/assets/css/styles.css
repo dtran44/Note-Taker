@@ -29,14 +29,12 @@ body {
 }
 
 
-.note-title,
-.note-textarea {
+.note-textarea,
+.note-title {
   color: #000000;
   width: 100%;
   outline: none;
   border: none;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .note-form {

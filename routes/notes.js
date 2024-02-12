@@ -1,6 +1,6 @@
 const notes = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils.js');
+const { readFromFile, readAndAppend,  writeToFile } = require('../helpers/fsUtils.js');
 
 
 // GET Route for retrieving all the notes
@@ -20,7 +20,7 @@ notes.post('/', (req, res) => {
     const newNote = {
       title,
       text,
-      note_id: uuidv4(),
+      id: uuidv4(),
     };
 
     readAndAppend(newNote, './db/notes.json');
@@ -31,19 +31,19 @@ notes.post('/', (req, res) => {
 });
 
 // DELETE Route for a specific tip
-notes.delete('/:note_id', (req, res) => {
-  const noteId = req.params.note_id;
+notes.delete('/:id', (req, res) => {
+  const Id = req.params.id;
   readFromFile('./db/notes.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
       // Make a new array of all notes except the one with the ID provided in the URL
-      const result = json.filter((note) => note.note_id !== noteId);
+      const result = json.filter((note) => note.id !== Id);
 
       // Save that array to the filesystem
       writeToFile('./db/notes.json', result);
 
       // Respond to the DELETE request
-      res.json(`Item ${noteId} has been deleted 🗑️`);
+      res.json(`Item ${Id} has been deleted 🗑️`);
     });
   });
 
