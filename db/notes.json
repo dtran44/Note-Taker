@@ -3,19 +3,14 @@
         "title": "Test Title",
         "text": "Test text"
     },
-    {},
     {
-        "title": "jfhjf",
-        "text": "kfkflfl"
+        "title": "Walk the dog",
+        "text": "walk the dog around the block",
+        "id": "8894307e-17b2-4ec5-b044-9158ee761aeb"
     },
     {
-        "title": "jhgjgj",
-        "text": "jhgjhgjhg",
-        "note_id": "c0e72393-a3d6-48c9-a4f2-8d1468cb79a3"
-    },
-    {
-        "title": "dfdg",
-        "text": "fhffhfjj",
-        "note_id": "62ba9dbd-3e74-4a21-acb3-c6a35664a218"
+        "title": "Pay the bill",
+        "text": "The electricity bill is due on Monday",
+        "id": "0fa3a6fe-d595-48f3-bdeb-e88f82369c6d"
     }
 ]
