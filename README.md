@@ -6,6 +6,7 @@ The goal of this project was to modify starter code to create a Note Taker app t
 I learnt how to use Express and Javascript to:
 - Create API routes to GET, POST and DELETE notes
 - To use Insomnia to test the API routes
+- To use UUID npm package to create a unique ID to allow the deletion of the note
 
 ## Installation
 
@@ -13,10 +14,12 @@ N/A
 
 ## Usage
 
-Link: https://dtran44.github.io/Password-Generator/
+GitHub Link: 
+
+Deployed Heroku link: 
 
 Screenshot: 
-![alt text]([assets/images/Diana Tran_Professional Portfolio screenshot.jpg)(https://github.com/dtran44/Professional-Portfolio/blob/main/assets/images/Diana%20Tran_Professional%20Portfolio%20screenshot.jpg)](https://github.com/dtran44/Password-Generator/blob/main/Develop/Password%20generator%20screenshot.jpg)
+
 
 ## License
 
