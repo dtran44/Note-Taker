@@ -11,7 +11,7 @@ const api = require('./routes/index.js');
 const app = express();
 
 // Specify on which port the Express.js server will run
-const PORT = 3001;
+const PORT = process.env.PORT||3001;
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
