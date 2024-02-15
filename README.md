@@ -14,11 +14,11 @@ N/A
 
 ## Usage
 
-GitHub Link: 
+GitHub Link: https://dtran44.github.io/Note-Taker/
 
-Deployed Heroku link: 
+Deployed Heroku link: https://fast-headland-84761-9d3fa016d970.herokuapp.com/
 
-Screenshot: 
+Screenshot: ![alt text](https://github.com/dtran44/Note-Taker/blob/main/public/assets/Note%20Taker%20app%20screenshot.png)
 
 
 ## License
